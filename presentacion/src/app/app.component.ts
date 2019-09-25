@@ -36,6 +36,7 @@ export class AppComponent {
       console.log(res);
 
       this.refreshUsers();
+      
 
     })
 
