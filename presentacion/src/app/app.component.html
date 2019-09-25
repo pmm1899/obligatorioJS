@@ -1,0 +1,22 @@
+<h1>{{ titulo }}</h1>
+<h2>Tareas</h2>
+<div>
+  <ul class="tareas">
+    <li *ngFor="let tarea of tareas" (click)="elegirTarea(tarea)">
+      <span>{{ tarea.id }}</span> - {{ tarea.tituloTarea }}
+    </li>
+  </ul>
+</div>
+<mi-tarea-detalle [tareaElegidaDetalle]="tareaElegida"></mi-tarea-detalle>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <input type="text" ngModel name="name" placeholder="Ingrese el nombre..." />
+  <button type="submit">Ingresar</button>
+</form>
+<div>
+  <ul>
+    <li *ngFor="let usuario of usuarios">
+      <span>{{ usuario.name }}</span>
+    </li>
+  </ul>
+</div>
