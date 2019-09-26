@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="header">
+      <h1>
+            Tipos de objeto
+        </h1> 
+    </div>
+ 
+    <div class="grid">
+        <div class="row">
+            <div>
+                <table>
+                    <tr>
+                      <th>Codigo</th>
+                      <th>Nombre</th>
+                    </tr>
+                    <tr *ngFor="let tipo of tipos" (click)="elegirTipo(tipo)">
+                        <td>{{ tipo.codigo }}</td>
+                        <td>{{ tipo.nombre }}</td>
+                        <!--<td><button type="submit" class="btnDel">Click</button></td>-->
+                    </tr>
+                </table>
+                
+                <div>
+                    <div>
+                        <h3>Crear Tipo de objeto</h3>
+                        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                                <label>Codigo:</label>
+                                <input type="text" ngModel name="codigo" />
+                                <label>Nombre:</label>
+                                <input type="text" ngModel name="nombre" />
+                                <button type="submit" class="btnSave">Crear</button>
+                        </form>
+                    </div>
+                    <div *ngIf="tiposElegido; else sinTipoElegido">
+                        <h3>Editar Tipo de objeto: {{tiposElegido.codigo}}</h3>
+                        <div>
+                                <label>Nombre:</label>
+                                <input [(ngModel)]="tiposElegido.nombre">
+                                <button type="submit" class="btnSave">Actualizar</button>
+                                <button type="submit" class="btnDel">Eliminar</button>
+                        </div>
+                        
+                    </div>
+                    <ng-template #sinTipoElegido>
+                        <!--<h3>Crear Tipo de objeto</h3>
+                        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                                <label>Codigo:</label>
+                                <input type="text" ngModel name="codigo" />
+                                <label>Nombre:</label>
+                                <input type="text" ngModel name="nombre" />
+                                <button type="submit">Ingresar</button>
+                        </form>-->
+                    </ng-template>
+                </div>
+            </div>
+            <br/>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>

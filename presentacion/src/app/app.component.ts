@@ -16,7 +16,7 @@ import firefox = require('selenium-webdriver/firefox');
 })
 
 export class AppComponent { 
-  titulo = 'Lista de Tareas';
+  titulo = 'Lista de Objetos';
   tareas = tareasLista;
   usuarios = usuariosLista;
   tareaElegida:Tarea;
